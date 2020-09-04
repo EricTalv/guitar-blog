@@ -1,20 +1,30 @@
 <template>
-  <div class="container">
-    <div>
-      <h1 class="title">
-        guitar-blog
-      </h1>
-    </div>
-  </div>
+   <b-container>
+        <b-jumbotron header="BootstrapVue" lead="Bootstrap v4 Components for Vue.js 2">
+          <p>For more information visit our website</p>
+        </b-jumbotron>
+
+        <b-form-group
+          horizontal
+          :label-cols="4"
+          description="Let us know your name."
+          label="Enter your name"
+        >
+          <b-form-input v-model.trim="name" v-on:keyup.enter="showAlert2"></b-form-input>
+        </b-form-group>
+
+        <b-alert variant="success" :show="showAlert">Hello {{ name }}</b-alert>
+      </b-container>
 </template>
 
 <script>
 export default {
-    head() {
+
+    data() {
       return {
-        script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
       };
     },
+  
 }
 </script>
 
